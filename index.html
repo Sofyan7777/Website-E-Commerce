@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronic Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <!-- bootstrap links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- bootstrap links -->
+  <!-- fonts links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <!-- fonts links -->
+</head>
+
+<body>
+
+  <!-- top navbar -->
+  <div class="top-navbar">
+    <p>WELCOME TO OUR SHOP</p>
+   
+  </div>
+  <!-- top navbar -->
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html" id="logo"><span id="span1">E</span>Lectronic <span>Shop</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><img src="./images/menu.png" alt="" width="30px"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#product-card">Product</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Category
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(67 0 86);">
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('all')">All Products</a></li>
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('mobile-phone')">Mobile
+                  Phone</a></li>
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('ipad')">iPad</a></li>
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('air-pods')">Air Pods</a></li>
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('product-cards')">Fridge</a>
+              </li>
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('ac')">AC</a></li>
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('smart-watch')">Smart Watch</a>
+              </li>
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('headphone')">Headphone</a>
+              </li>
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('laptop')">Laptop</a></li>
+              <li><a class="dropdown-item" href="#product-cards" onclick="filterProducts('pc-monitor')">PC Monitor</a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex" id="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search " id="searchInput">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <i><a class="fa-solid fa-cart-shopping" href="keranjang.html"></a></i>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar -->
+
+
+
+
+
+
+
+
+  <!-- home content -->
+  <section class="home">
+    <div class="content">
+      <h1> <span>Electronic Products</span>
+        <br>
+        Up To <span id="span2">50%</span> Off
+      </h1>
+
+      <div class="btn"><button>Shop Now</button></div>
+
+    </div>
+    <div class="img">
+      <img src="./images/background.png" alt="">
+    </div>
+  </section>
+  <!-- home content -->
+
+
+
+
+
+
+
+
+  <!-- product cards -->
+  <div class="container" id="product-cards">
+    <h1 class="text-center">PRODUCTS</h1>
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-md-3 py-3 py-md-0 product" id="mobile-phone2">
+        <div class="card">
+          <img src="./images/p6.png" alt="iPhone 13 Pro" class="card-img-top">
+          <div class="card-body">
+            <h3 class="text-center product-name">Iphone 13 Pro</h3>
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 9.249.000 <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Iphone 13 Pro', 9249000)"
+                  id="card"></i></span></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 py-3 py-md-0 product" id="air-pods">
+        <div class="card">
+          <img src="./images/a1.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Airpods</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 1.899.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;"
+                  onclick="addToCart('Airpods', 1899000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product" id="laptop">
+        <div class="card">
+          <img src="./images/laptop2.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Laptop</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 3.712.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;"  onclick="addToCart('Laptop', 3712000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product" id="ipad">
+        <div class="card">
+          <img src="./images/t1.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Ipad</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 7.999.999 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;"  onclick="addToCart('Ipad', 7999999)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-md-3 py-3 py-md-0 product" id="smart-watch">
+        <div class="card">
+          <img src="./images/w1.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Smart Watch</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 4.199.999 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;"  onclick="addToCart('Smart Watch', 4199999)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product" id="pc-monitor">
+        <div class="card">
+          <img src="./images/pcm1.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">PC Monitor</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 719.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product" id="mobile-phone">
+        <div class="card">
+          <img src="./images/phone1.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">iPhone x</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 7.249.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;"  onclick="addToCart('iPhone x', 7249000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product" id="headphone">
+        <div class="card">
+          <img src="./images/h1.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Headphone</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 552.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('Headphone', 552000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- product cards -->
+  <!-- Notification -->
+  <div id="notification"
+    style="display:none; position: fixed; bottom: 20px; left: 20px; background-color: #28a745; color: white; padding: 10px; border-radius: 5px;">
+    Product added to cart!
+  </div>
+
+
+
+
+
+
+
+
+  <!-- other cards -->
+  <div class="container" id="other-cards">
+    <div class="row">
+      <div class="col-md-6 py-3 py-md-0">
+        <div class="card">
+          <img src="./images/c1.png" alt="">
+          <div class="card-img-overlay">
+            <h3>Best Laptop</h3>
+            <h5>Latest Collection</h5>
+            <p>Up To 50% Off</p>
+            <button id="shopnow">Shop Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 py-3 py-md-0">
+        <div class="card">
+          <img src="./images/c2.png" alt="">
+          <div class="card-img-overlay">
+            <h3>Best Headphone</h3>
+            <h5>Latest Collection</h5>
+            <p>Up To 50% Off</p>
+            <button id="shopnow">Shop Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- other cards -->
+
+
+
+
+
+
+
+  <!-- banner -->
+  <section class="banner">
+    <div class="content">
+      <h1> <span>Electronic Gadget</span>
+        <br>
+        Up To <span id="span2">50%</span> Off
+      </h1>
+
+      <div class="btn"><button>Shop Now</button></div>
+
+    </div>
+    <div class="img">
+      <img src="./images/image1.png" alt="">
+    </div>
+  </section>
+  <!-- banner -->
+
+
+
+
+
+
+
+
+  <!-- product cards -->
+  <div class="container" id="product-cards">
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-md-3 py-3 py-md-0 product" id="Washion_Machine">
+        <div class="card">
+          <img src="./images/pr1.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Washion Machine</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 1.739.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('Washion Machine', 1739000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product" id="ac">
+        <div class="card">
+          <img src="./images/pr2.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">AC</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 2.425.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('AC', 2425000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product">
+        <div class="card">
+          <img src="./images/pr3.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Microwave Oven</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 979.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('Microwave Oven', 979000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product">
+        <div class="card">
+          <img src="./images/pr4.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Fridge</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 3.154.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;"  onclick="addToCart('Fridge', 3154000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- other cards -->
+    <div class="container" id="other">
+      <div class="row">
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/c3.png" alt="">
+            <div class="card-img-overlay">
+              <h3>Home Gadget</h3>
+              <p>Latest collection Up To 50% Off</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/c4.png" alt="">
+            <div class="card-img-overlay">
+              <h3>Gaming Gadget</h3>
+              <p>Latest collection Up To 50% Off</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/c5.png" alt="">
+            <div class="card-img-overlay">
+              <h3>Electronic Gadget</h3>
+              <p>Latest collection Up To 50% Off</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- other cards -->
+
+
+
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-md-3 py-3 py-md-0 product">
+        <div class="card">
+          <img src="./images/pr5.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Fan</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 1.443.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('Fan', 1443000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product">
+        <div class="card">
+          <img src="./images/pr6.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Fridge</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 4.410.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('Fridge', 4410000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product">
+        <div class="card">
+          <img src="./images/pr7.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Gaming PC</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 16.999.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('Gaming Pc', 16999000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product">
+        <div class="card">
+          <img src="./images/pr8.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Monitor</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 1.149.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('Monitor', 1149000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row" style="margin-top: 30px;" id="smart-watch">
+      <div class="col-md-3 py-3 py-md-0 product">
+        <div class="card">
+          <img src="./images/pr9.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Smart Watch</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 4.999.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('smart Watch', 4999000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product">
+        <div class="card">
+          <img src="./images/pr10.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Power Bank</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 499.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('Power Bank ', 499000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product" id="gaming-mouse">
+        <div class="card">
+          <img src="./images/pr11.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Gaming Mouse</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 149.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('gaming Mouse', 149000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 py-3 py-md-0 product" id="Joysticks">
+        <div class="card">
+          <img src="./images/pr12.png" alt="">
+          <div class="card-body">
+            <h3 class="text-center product-name">Joysticks</h3>
+
+            <div class="star text-center">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2>Rp 1.500.000 <span>
+                <li class="fa-solid fa-cart-shopping" style="color: black;" onclick="addToCart('Joysticks', 1500000)"></li>
+              </span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- product cards -->
+
+
+
+
+
+
+
+
+
+  <!-- offer -->
+  <div class="container" id="offer">
+    <div class="row">
+      <div class="col-md-3 py-3 py-md-0">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h3>Free Shipping</h3>
+        <p>On order over Rp 10.000.000</p>
+      </div>
+      <div class="col-md-3 py-3 py-md-0">
+        <i class="fa-solid fa-rotate-left"></i>
+        <h3>Free Returns</h3>
+        <p>Within 30 days</p>
+      </div>
+      <div class="col-md-3 py-3 py-md-0">
+        <i class="fa-solid fa-truck"></i>
+        <h3>Fast Delivery</h3>
+        <p>World Wide</p>
+      </div>
+      <div class="col-md-3 py-3 py-md-0">
+        <i class="fa-solid fa-thumbs-up"></i>
+        <h3>Big choice</h3>
+        <p>Of products</p>
+      </div>
+    </div>
+  </div>
+  <!-- offer -->
+  <!-- tentang kami -->
+  <div class="container" id="about">
+    <h3 class="text-center">Tentang kami</h3>
+    <hr>
+    <p>Electronic Shop merupakan perusahaan ritel elektronik di Indonesia yang didirikan pada bulan November 2001 di
+      Kawasan Sudirman Central Business District (SCBD) Jakarta dan pada tahun 2013 telah resmi menjadi perusahaan
+      publik di Bursa Efek Indonesia.</p>
+    <hr>
+    <div class="row" style="margin-top: 50px;">
+      <div class="col-md-5 py-3 py-md-0">
+        <div class="card">
+          <img src="./images/background.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-7 py-3 py-md-0">
+        <p>Electronic Shop terus mengembangkan dan memperluas bisnisnya dan saat ini mengoperasikan 63 toko dan 10
+          gudang distribusi yang tersebar di seluruh Indonesia yaitu 5 Pulau Besar dan 15 Provinsi dari Pulau Jawa,
+          Sumatera, Kalimantan, Sulawesi dan Bali.</p>
+        <button>Read More...</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- kontak -->
+
+  <div class="container" id="contact">
+    <h3 class="text-center product-text">Kontak Kami</h3>
+    <div class="row" style="margin-top: 50px;">
+      <!-- Phone -->
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <i class="fas fa-phone"> Phone</i>
+          <h6>021-5151177</h6>
+        </div>
+      </div>
+      <!-- Email -->
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <i class="fas fa-envelope"> Email</i>
+          <h6>electronicshop@.com</h6>
+        </div>
+      </div>
+      <!-- Address -->
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <i class="fas fa-location-dot"> Address</i>
+          <h6>Jl. Jend. Sudirman Kav.52 Jakarta</h6>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Google Maps -->
+    <div class="row mt-4">
+      <div class="col-12">
+        <h5 class="text-center">Lokasi Kami</h5>
+        <div class="map-responsive">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.6809195010688!2d106.82281672844273!3d-6.2114690999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cde310dc49%3A0xc3f3c091e5827dc!2sJl.%20Jend.%20Sudirman%20Kav.%2052%2C%20Kebayoran%20Baru%2C%20Jakarta%20Selatan!5e0!3m2!1sid!2sid!4v1696868562034!5m2!1sid!2sid"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+ 
+ 
+
+
+
+
+
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Electronic Shop</h3>
+            <p>
+              Jl. Jend. Sudirman Kav.52 Jakarta <br>
+            </p>
+            <strong>Phone:</strong> 021-5151177 <br>
+            <strong>Email:</strong> electronicshop@.com <br>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Usefull Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms Of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+
+
+
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+
+            <ul>
+              <li><a href="#">PS 5</a></li>
+              <li><a href="#">Computer</a></li>
+              <li><a href="#">Gaming Laptop</a></li>
+              <li><a href="#">Mobile Phone</a></li>
+              <li><a href="#">Gaming Gadget</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+
+
+            <div class="socail-links mt-3">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-skype"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Electronic Shop</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">Sofyan</a>
+      </div>
+    </div>
+  </footer>
+  <!-- footer -->
+
+
+
+
+
+
+
+  <a href="#" class="arrow"><i><img src="./images/arrow.png" alt=""></i></a>
+
+
+
+
+
+
+
+
+
+  <script>
+    window.onload = function () {
+      // Ambil parameter kategori dari URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const category = urlParams.get('category'); // Misalnya, 'mobile-phone'
+
+      // Jika kategori ditemukan, filter produk berdasarkan kategori
+      if (category && category !== 'all') {
+        filterProducts(category); // Menyaring produk berdasarkan kategori yang ada
+      } else {
+        // Jika kategori tidak ada atau 'all', tampilkan semua produk
+        filterProducts('all');
+      }
+    };
+
+    // Fungsi untuk menyaring produk berdasarkan kategori
+    function filterProducts(category) {
+      // Ambil semua elemen produk
+      const products = document.querySelectorAll('.col-md-3');
+
+      // Iterasi melalui semua produk
+      products.forEach(product => {
+        // Jika ID produk sesuai dengan kategori, tampilkan produk
+        if (product.id === category || category === 'all') {
+          product.style.display = 'block'; // Menampilkan produk
+        } else {
+          product.style.display = 'none'; // Menyembunyikan produk yang tidak sesuai
+        }
+      });
+    }
+    // Fungsi untuk mencari produk
+    function searchProducts() {
+      const searchInput = document.getElementById('searchInput').value.toLowerCase(); // Mendapatkan input pencarian
+      const products = document.querySelectorAll('.product'); // Mengambil semua elemen dengan class "product"
+
+      products.forEach(product => {
+        const productName = product.querySelector('.product-name').textContent.toLowerCase(); // Menangkap nama produk
+        if (productName.includes(searchInput)) {
+          product.style.display = 'block'; // Menampilkan produk yang sesuai dengan pencarian
+        } else {
+          product.style.display = 'none'; // Menyembunyikan produk yang tidak sesuai
+        }
+      });
+    }
+
+    // Menangani event submit pada form untuk pencarian
+    document.getElementById('search').addEventListener('submit', function (event) {
+      event.preventDefault(); // Mencegah reload halaman
+      searchProducts(); // Menjalankan fungsi pencarian
+    });
+  </script>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Fungsi untuk menambahkan produk ke keranjang dan simpan ke localStorage
+    function addToCart(productName, productPrice) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Cek jika produk sudah ada di keranjang, jika ada tambahkan quantity
+      const existingProduct = cart.find(item => item.name === productName);
+      if (existingProduct) {
+        existingProduct.quantity += 1;  // Tambah quantity jika produk sudah ada
+      } else {
+        cart.push({ name: productName, price: productPrice, quantity: 1 });
+      }
+
+      // Simpan kembali data keranjang ke localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Menampilkan notifikasi
+      const notification = document.getElementById('notification');
+      notification.style.display = 'block'; // Tampilkan notifikasi
+      setTimeout(() => {
+        notification.style.display = 'none'; // Sembunyikan setelah 3 detik
+      }, 3000);
+
+      // Opsional: Alert untuk notifikasi
+      alert(`${productName} berhasil ditambahkan ke keranjang!`);
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronic Shop - Cart</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+</head>
+
+<body>
+  <!-- Top navbar -->
+  <div class="top-navbar">
+    <p>WELCOME TO OUR SHOP</p>
+
+  </div>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html" id="logo"><span id="span1">E</span>Lectronic <span>Shop</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span><img src="./images/menu.png" alt="" width="30px"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#product-cards">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Cart Section -->
+  <div class="container mt-5" id="cart-container">
+    <h3 class="text-center mb-4">Your Shopping Cart</h3>
+    <table class="table table-bordered text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- Cart items will be added dynamically here -->
+      </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between">
+      <h5>Total: <strong id="total-price">Rp 0</strong></h5>
+      <button class="btn btn-success" id="checkout-button">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout Section (hidden initially) -->
+  <div class="container mt-5" id="checkout-section" style="display:none;">
+    <h3 class="text-center mb-4">Checkout</h3>
+    <table class="table table-bordered text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="checkout-items">
+        <!-- Checkout items will be added dynamically here -->
+      </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between">
+      <h5>Total Payment: <strong id="checkout-total">Rp 0</strong></h5>
+      <button class="btn btn-success" id="confirm-order">Confirm Order</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="mt-5">
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Electronic Shop</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">Sofyan</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- JavaScript -->
+  <script>
+    // Menyimpan keranjang produk
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Fungsi untuk memperbarui tampilan keranjang
+    function updateCart() {
+      const cartItemsTable = document.getElementById('cart-items');
+      const totalPriceElement = document.getElementById('total-price');
+      cartItemsTable.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+        <td>${item.name}</td>
+        <td>Rp ${item.price}</td>
+        <td><input type="number" class="form-control quantity" value="${item.quantity}" min="1" data-name="${item.name}"></td>
+        <td>Rp ${item.price * item.quantity}</td>
+        <td><button class="btn btn-danger btn-sm remove-item" data-name="${item.name}">Remove</button></td>
+      `;
+        cartItemsTable.appendChild(row);
+        total += item.price * item.quantity;
+      });
+
+      totalPriceElement.textContent = `Rp ${total.toLocaleString()}`;
+    }
+
+    // Mengupdate jumlah produk ketika quantity berubah
+    document.addEventListener('change', function (e) {
+      if (e.target.classList.contains('quantity')) {
+        const productName = e.target.getAttribute('data-name');
+        const newQuantity = parseInt(e.target.value);
+        const item = cart.find(item => item.name === productName);
+        if (item) {
+          item.quantity = newQuantity;
+        }
+        localStorage.setItem('cart', JSON.stringify(cart)); // Simpan ke localStorage
+        updateCart();
+      }
+    });
+
+    // Menghapus item dari keranjang
+    document.addEventListener('click', function (e) {
+      if (e.target.classList.contains('remove-item')) {
+        const productName = e.target.getAttribute('data-name');
+        cart = cart.filter(item => item.name !== productName);
+        localStorage.setItem('cart', JSON.stringify(cart)); // Simpan ke localStorage
+        updateCart();
+      }
+    });
+
+    // Menampilkan halaman checkout
+    document.getElementById('checkout-button').addEventListener('click', function () {
+      // Sembunyikan keranjang, tampilkan checkout
+      document.getElementById('cart-container').style.display = 'none';
+      document.getElementById('checkout-section').style.display = 'block';
+
+      // Salin produk ke bagian checkout
+      const checkoutItemsTable = document.getElementById('checkout-items');
+      checkoutItemsTable.innerHTML = '';
+      let checkoutTotal = 0;
+      cart.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.name}</td>
+          <td>Rp ${item.price}</td>
+          <td>${item.quantity}</td>
+          <td>Rp ${item.price * item.quantity}</td>
+        `;
+        checkoutItemsTable.appendChild(row);
+        checkoutTotal += item.price * item.quantity;
+      });
+      document.getElementById('checkout-total').textContent = `Rp ${checkoutTotal.toLocaleString()}`;
+    });
+
+    // Mengonfirmasi pesanan dan menampilkan pesan
+    document.getElementById('confirm-order').addEventListener('click', function () {
+      // Hapus keranjang dan kembalikan tampilan ke halaman utama
+      localStorage.removeItem('cart');
+      cart = [];
+      updateCart();
+      document.getElementById('cart-container').style.display = 'block';
+      document.getElementById('checkout-section').style.display = 'none';
+
+      // Menampilkan pesan sukses menggunakan Toastify
+      Toastify({
+        text: "Proses checkout berhasil. Terima kasih telah berbelanja di toko kami!!",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#28a745"
+      }).showToast();
+    });
+
+    // Memperbarui tampilan awal halaman
+    updateCart();
+  </script>
+</body>
+
+</html>
